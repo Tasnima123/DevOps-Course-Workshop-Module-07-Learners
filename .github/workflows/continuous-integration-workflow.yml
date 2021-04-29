@@ -13,6 +13,7 @@ jobs:
       run: npm run build
     - name: Runs the C# tests
       run: dotnet test
+    - name: Runs the linter on the typescript code and the typescript tests
       working-directory: ./DotnetTemplate.Web
       run: |
         npm t
