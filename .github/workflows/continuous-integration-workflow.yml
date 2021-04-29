@@ -14,7 +14,7 @@ jobs:
     - name: Runs the C# tests
       run: dotnet test
       working-directory: ./DotnetTemplate.Web
-        run: |
+        run:
           npm t
           npm run lint
 
