@@ -1,5 +1,5 @@
 pipeline {
-    agent none {}
+    agent none
     environment {
         DOTNET_CLI_HOME = "/tmp/dotnet_cli_home"
     }
