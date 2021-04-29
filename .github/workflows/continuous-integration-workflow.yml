@@ -9,6 +9,7 @@ jobs:
     - uses: actions/checkout@v2 # Adds a step to checkout the repository code
     - name: Builds the C# code # Name of step
       run: dotnet build # Command to run
+    - name: build the typescript code
       working-directory: ./DotnetTemplate.Web
       run: npm run build
     - name: Runs the C# tests
