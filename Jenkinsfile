@@ -4,6 +4,18 @@ pipeline {
         DOTNET_CLI_HOME = "/tmp/dotnet_cli_home"
     }
     stages {
+        stage('Build dotnet') {
+            agent {
+                docker { 
+                    image '5.0-alpine' 
+                    label 'docker-dotnet'
+                    }
+            }
+            steps {
+                sh "dotnet build"
+            }
+        }
+
         stage('Build npm') {
             agent {
                 docker { 
@@ -17,14 +29,7 @@ pipeline {
                 }
             }
         }
-        stage('build dotnet'){
-            agent {
-                docker { 
-                    image '5.0-alpine' 
-                    label 'docker-dotnet'
-                    }
-            }
-        }
+
         stage('Test') {
             steps {
                 sh "dotnet test"
