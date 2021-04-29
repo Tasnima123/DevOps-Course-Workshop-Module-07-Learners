@@ -1,7 +1,14 @@
 pipeline {
     agent {
-        docker { image 'node:14-alpine' }
-        docker { image '5.0-alpine'}
+        docker { 
+            image 'node:14-alpine' 
+            label 'docker-node'
+        }
+        
+        docker { 
+            image '5.0-alpine'
+            label 'docker-dotnet'
+        }
     }
     environment {
         DOTNET_CLI_HOME = "/tmp/dotnet_cli_home"
