@@ -11,7 +11,7 @@ jobs:
       run: dotnet build # Command to run
     - name: build the typescript code
       working-directory: ./DotnetTemplate.Web
-      run: npm run build
+      run: npm install && npm run build
     - name: Runs the C# tests
       run: dotnet test
     - name: Runs the linter on the typescript code and the typescript tests
